@@ -9,10 +9,10 @@ function preload(){
 function setup(){
     canvas = createCanvas(380,380);
     canvas.center();
-    //CLASS 134
+
     video = createCapture(VIDEO);
     video.hide();
-    //END OF CLASS 134
+
     objectDetector = ml5.objectDetector("cocossd", modelLoaded);
     document.getElementById("status").innerHTML = "Status: Detecting Objects";
 }
@@ -43,13 +43,13 @@ function draw(){
                 audio.stop();
             }
             else{
-                document.getElementById("number_of_objects").innerHTML = "PersonNot Detected";
+                document.getElementById("number_of_objects").innerHTML = "Person Not Detected";
                 audio.play();  
             }
         }
 
         if(object.length == 0){
-            document.getElementById("number_of_objects").innerHTML = "PersonNot Detected";
+            document.getElementById("number_of_objects").innerHTML = "Person Not Detected";
             audio.play(); 
         }
     }
